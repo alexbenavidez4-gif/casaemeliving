@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://casaemeliving.com/">
 <meta property="og:image" content="https://casaemeliving.com/share.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#f6f1e6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,13 +27,13 @@ img{max-width:100%}
 @media (max-width:700px){.ce-nav{display:none !important}.ce-display{font-size:40px !important;line-height:46px !important}}
 
 /* ---------- Intro (plays at most once every 24 hours per visitor) ---------- */
-.ce-intro{display:none;position:fixed;inset:0;z-index:50;overflow:hidden;--vw:min(100vw,177.78vh);--hw:299px}
-@media (max-width:700px){.ce-intro{--hw:172px}}
+.ce-intro{display:none;position:fixed;inset:0;z-index:50;overflow:hidden;--vw:min(100vw,177.78vh);--hw:122px}
+@media (max-width:700px){.ce-intro{--hw:84px}}
 html.intro-on{overflow:hidden}
 html.intro-on .ce-intro{display:block}
 html.intro-on .ce-logo{opacity:0}
 .ce-logo{transition:opacity 1s ease;height:160px;width:auto}
-@media (max-width:700px){.ce-logo{height:92px}}
+@media (max-width:700px){.ce-logo{height:110px}}
 .ce-paperbg{position:absolute;inset:0;background:#f6f1e6 url(paper.jpg) center/cover no-repeat}
 .ce-video{position:absolute;left:50%;top:50%;width:var(--vw);height:auto;aspect-ratio:16/9;transform:translate(-50%,-50%);object-fit:cover;background:transparent;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 62%,transparent 100%)}
 .ce-tiles{position:absolute;inset:-4%;width:108%;height:108%;opacity:0;-webkit-mask-image:radial-gradient(ellipse 46% 40% at 50% 50%,transparent 55%,#000 100%);mask-image:radial-gradient(ellipse 46% 40% at 50% 50%,transparent 55%,#000 100%);animation:ce-tiles 1s ease .1s forwards}
@@ -43,12 +43,12 @@ html.intro-on .ce-logo{opacity:0}
 @keyframes ce-bienv{0%{opacity:0;transform:translate(-50%,-40%)}18%,82%{opacity:1;transform:translate(-50%,-50%)}100%{opacity:0;transform:translate(-50%,-50%)}}
 .ce-btns{position:absolute;right:16px;bottom:16px;display:flex;gap:8px}
 .ce-btn{background:rgba(246,241,230,.85);border:1px solid #7e5f24;color:#7e5f24;font:600 13px Inter,system-ui,sans-serif;letter-spacing:.14em;padding:12px 16px;border-radius:4px;min-height:44px;cursor:pointer}
-.ce-fly{position:absolute;left:50%;top:calc(50% - var(--vw)*0.00534);width:calc(var(--vw)*0.6139);height:auto;transform:translate(-50%,-50%);opacity:0;max-width:none}
+.ce-fly{position:absolute;left:50%;top:50%;width:calc(var(--vw)*0.3593);height:auto;transform:translate(-50%,-50%);opacity:0;max-width:none}
 .ce-intro.is-fly .ce-bienv,.ce-intro.is-fly .ce-btns{display:none}
 .ce-intro.is-fly .ce-video{animation:ce-out .4s ease forwards}
 .ce-intro.is-fly .ce-fly{opacity:1;animation:ce-fly 1.4s cubic-bezier(.65,0,.35,1) forwards}
 .ce-intro.is-fly .ce-paperbg,.ce-intro.is-fly .ce-tiles{animation:ce-out 1.1s ease .15s forwards}
-@keyframes ce-fly{from{left:50%;top:calc(50% - var(--vw)*0.00534);width:calc(var(--vw)*0.6139);transform:translate(-50%,-50%);opacity:0}22%{opacity:1}to{left:max(24px,calc(50vw - 576px));top:60px;width:var(--hw);transform:translate(0,0);opacity:1}}
+@keyframes ce-fly{from{left:50%;top:50%;width:calc(var(--vw)*0.3593);transform:translate(-50%,-50%);opacity:0}22%{opacity:1}to{left:max(24px,calc(50vw - 576px));top:60px;width:var(--hw);transform:translate(0,0);opacity:1}}
 @keyframes ce-out{to{opacity:0}}
 @media (prefers-reduced-motion:reduce){html.intro-on .ce-intro{display:none}html.intro-on{overflow:auto}html.intro-on .ce-logo{opacity:1}}
 
@@ -85,7 +85,7 @@ html.intro-on .ce-logo{opacity:0}
   </svg>
   <video class="ce-video" id="introVideo" src="intro.mp4" poster="intro-poster.jpg" preload="auto" playsinline aria-hidden="true"></video>
   <p class="ce-bienv">Bienvenidos a Casa Eme</p>
-  <img class="ce-fly" src="casa-eme-logo-gold.png" alt="" aria-hidden="true">
+  <img class="ce-fly" src="casa-eme-crest.png" alt="" aria-hidden="true">
   <div class="ce-btns"><button type="button" class="ce-btn" id="introSkip">SKIP</button></div>
 </div>
 <script>
@@ -145,7 +145,7 @@ html.intro-on .ce-logo{opacity:0}
   </div>
   <header style="max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
     <a href="#top" style="display: flex; align-items: center" aria-label="Casa Eme home">
-      <img class="ce-logo" src="casa-eme-logo-gold.png" alt="Casa Eme" width="2044" height="1094" style="display: block">
+      <img class="ce-logo" src="casa-eme-crest.png" alt="Casa Eme" width="1260" height="1648" style="display: block">
     </a>
     <nav class="ce-nav" aria-label="Main" style="display: flex; align-items: center; gap: 28px; font-size: 15px; font-weight: 600">
       <a href="#menu" style="color: #3b2b1e; text-decoration: none">Menu</a>
@@ -170,7 +170,7 @@ html.intro-on .ce-logo{opacity:0}
     <div style="flex: 1 1 380px; min-width: 0; display: flex; justify-content: center">
       <!-- PHOTO: replace this frame's contents with <img src="hero.jpg" alt="A Casa Eme holiday basket" style="width:100%;height:100%;object-fit:cover;border-radius:6px"> -->
       <div class="ce-photo" style="width: 100%; max-width: 440px; aspect-ratio: 1 / 1; background: rgba(239,230,214,.78); border-radius: 8px; border: 2px solid #a8823a; outline: 1px solid #a8823a; outline-offset: 8px; margin: 10px; padding: 24px; box-sizing: border-box">
-        <img src="casa-eme-logo-gold.png" alt="Casa Eme gift baskets" style="width: 94%; height: auto">
+        <img src="casa-eme-crest.png" alt="Casa Eme gift baskets" style="height: 84%; width: auto">
         <span>Hecho a mano · San Antonio</span>
       </div>
     </div>
@@ -294,7 +294,7 @@ html.intro-on .ce-logo{opacity:0}
   <footer style="background: rgba(239,230,214,.78); color: #3b2b1e; padding: 48px 24px; border-top: 1px solid #e0d3bc">
     <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 32px">
       <div style="display: flex; flex-direction: column; gap: 12px">
-        <img src="casa-eme-logo-gold.png" alt="Casa Eme" style="height: 140px; width: auto; align-self: flex-start">
+        <img src="casa-eme-crest.png" alt="Casa Eme" style="height: 170px; width: auto; align-self: flex-start">
         <p style="margin: 0; font-size: 14px; line-height: 20px">Hand-wrapped gift baskets · San Antonio, TX</p>
       </div>
       <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 20px">
