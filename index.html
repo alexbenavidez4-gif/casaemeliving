@@ -63,6 +63,63 @@ html.intro-on .ce-logo{opacity:0}
 .ce-langbtn{background:none;border:0;padding:6px 8px;min-height:32px;cursor:pointer;color:#7e5f24;letter-spacing:.04em;text-decoration:underline;text-underline-offset:3px}
 .ce-langbtn[aria-pressed="true"]{color:#3b2b1e;font-weight:600;text-decoration:none;cursor:default}
 .ce-langsep{color:#a8823a}
+
+/* ---------- Cart ---------- */
+.ce-add{margin-top:10px;align-self:stretch;background:#3b2b1e;color:#f7f2e9;border:0;border-radius:8px;padding:12px 16px;min-height:44px;font:600 14px Inter,system-ui,sans-serif;cursor:pointer;transition:background .2s}
+.ce-add:hover{background:#5a4430}
+.ce-add.is-added{background:#7e5f24}
+.ce-cartbtn{position:fixed;right:16px;bottom:16px;z-index:40;display:inline-flex;align-items:center;gap:8px;background:#3b2b1e;color:#f7f2e9;border:1px solid #a8823a;border-radius:999px;padding:10px 16px;min-height:48px;font:600 14px Inter,system-ui,sans-serif;cursor:pointer;box-shadow:0 6px 18px rgba(59,43,30,.25)}
+.ce-cartbtn svg{width:20px;height:20px}
+.ce-cartcount{background:#c9a55a;color:#3b2b1e;border-radius:999px;min-width:22px;height:22px;padding:0 6px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;font-size:12px}
+.ce-carttotal:empty{display:none}
+.ce-cartbtn.bump{animation:ce-bump .45s ease}
+@keyframes ce-bump{30%{transform:scale(1.08)}}
+html.intro-on .ce-cartbtn{display:none}
+.ce-backdrop{position:fixed;inset:0;z-index:44;background:rgba(59,43,30,.35)}
+.ce-drawer{position:fixed;top:0;right:0;z-index:45;height:100%;width:min(420px,100%);box-sizing:border-box;background:#f7f2e9 url(paper.jpg) center/cover;border-left:2px solid #a8823a;display:flex;flex-direction:column;transform:translateX(105%);transition:transform .3s ease;visibility:hidden}
+.ce-drawer.open{transform:none;visibility:visible}
+.ce-drawer-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid #e0d3bc}
+.ce-drawer-head h2{margin:0;font:700 24px Lora,Georgia,serif}
+.ce-close{background:none;border:0;font-size:32px;line-height:1;color:#3b2b1e;cursor:pointer;min-width:44px;min-height:44px}
+.ce-drawer-body{flex:1;overflow:auto;padding:8px 24px}
+.ce-drawer-foot{padding:20px 24px;border-top:1px solid #e0d3bc;display:flex;flex-direction:column;gap:10px}
+.ce-line{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:16px 0;border-bottom:1px solid #e0d3bc}
+.ce-line-name{font:700 18px Lora,Georgia,serif}
+.ce-line-price{font-size:13px;color:#6e5e4e}
+.ce-line-total{font-weight:600;color:#3b2b1e;text-align:right}
+.ce-qty{justify-self:start;display:inline-flex;align-items:center;border:1px solid #b9a894;border-radius:6px;overflow:hidden;background:#f7f2e9}
+.ce-qty button{background:none;border:0;width:40px;height:40px;font-size:18px;color:#3b2b1e;cursor:pointer}
+.ce-qty span{min-width:28px;text-align:center;font-weight:600}
+.ce-remove{background:none;border:0;color:#7e5f24;text-decoration:underline;font-size:13px;cursor:pointer;justify-self:end;padding:8px 0}
+.ce-sum{display:flex;justify-content:space-between;font:700 20px Lora,Georgia,serif}
+.ce-note{margin:0;font-size:13px;line-height:19px;color:#6e5e4e}
+.ce-go{background:#3b2b1e;color:#f7f2e9;border:0;border-radius:8px;padding:14px;min-height:48px;font:600 15px Inter,system-ui,sans-serif;cursor:pointer}
+.ce-empty{padding:28px 0;color:#6e5e4e}
+/* order form */
+.ce-summary{background:#f7f2e9;border:1px solid #e0d3bc;border-radius:6px;padding:12px 14px;font-weight:400;font-size:14px;line-height:22px}
+.ce-summary table{width:100%;border-collapse:collapse}
+.ce-summary td{padding:3px 0}
+.ce-summary td:last-child{text-align:right;white-space:nowrap}
+.ce-summary .tot td{border-top:1px solid #e0d3bc;padding-top:8px;font-weight:700}
+.ce-summary a{color:#7e5f24}
+.ce-fieldset{border:1px solid #e0d3bc;border-radius:6px;padding:10px 14px 12px;margin:0;display:flex;flex-direction:column;gap:6px}
+.ce-fieldset legend{font-size:14px;font-weight:600;padding:0 4px}
+.ce-radio,.ce-check{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:22px;min-height:32px;cursor:pointer}
+.ce-radio input,.ce-check input{width:18px;height:18px;margin:2px 0 0;accent-color:#3b2b1e;flex:none}
+.ce-when{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:520px){.ce-when{grid-template-columns:minmax(0,1fr)}}
+.ce-datewrap{display:flex;gap:6px}
+.ce-datewrap input{flex:1;min-width:0}
+.ce-calbtn{flex:none;width:44px;min-height:44px;border:1px solid #a8823a;border-radius:6px;background:#f7f2e9;color:#7e5f24;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.ce-calbtn svg{width:22px;height:22px}
+.ce-hint{font-size:12px;font-weight:400;color:#6e5e4e}
+.ce-error{margin:0;background:#f7e3dc;border:1px solid #b5532e;color:#7a2e14;border-radius:6px;padding:10px 12px;font-size:14px}
+/* allergy + about */
+.ce-allergy{border:1px solid #a8823a;outline:1px solid #a8823a;outline-offset:4px;border-radius:6px;background:#f7f2e9;padding:16px 20px;margin:6px 4px 4px;display:flex;flex-direction:column;gap:6px}
+.ce-allergy-title{margin:0;font-size:12px;font-weight:600;letter-spacing:.14em;color:#7e5f24}
+.ce-about{padding:72px 24px;border-top:1px solid #e0d3bc}
+.ce-about-inner{max-width:720px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
+.ce-about-mark{width:120px;height:auto}
 /* Photo frames: shown until real basket photos are added */
 .ce-photo{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:#7e5f24;text-align:center}
 .ce-photo img.ce-mark{width:38%;max-width:140px;opacity:.85}
@@ -166,6 +223,24 @@ html.intro-on .ce-logo{opacity:0}
 })();
 </script>
 
+
+<!-- ===== Cart ===== -->
+<button type="button" class="ce-cartbtn" id="cartBtn" aria-haspopup="dialog" aria-controls="cartDrawer">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.3 11.2a1.5 1.5 0 0 1-1.5 1.3H7.8a1.5 1.5 0 0 1-1.5-1.3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  <span id="cartBtnLabel">Cart</span>
+  <span class="ce-cartcount" id="cartCount">0</span>
+  <span class="ce-carttotal" id="cartBtnTotal"></span>
+</button>
+<div class="ce-backdrop" id="cartBackdrop" hidden></div>
+<aside class="ce-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+  <div class="ce-drawer-head">
+    <h2 id="cartTitle">Your cart</h2>
+    <button type="button" class="ce-close" id="cartClose" aria-label="Close cart / Cerrar carrito">&times;</button>
+  </div>
+  <div class="ce-drawer-body" id="cartItems"></div>
+  <div class="ce-drawer-foot" id="cartFoot"></div>
+</aside>
+
 <!-- ===== Page ===== -->
 <div style="color: #3b2b1e; min-height: 100vh">
 
@@ -183,6 +258,7 @@ html.intro-on .ce-logo{opacity:0}
         <a href="#menu" style="color: #3b2b1e; text-decoration: none">Menu</a>
         <a href="#custom" style="color: #3b2b1e; text-decoration: none">Custom baskets</a>
         <a href="#order" style="color: #3b2b1e; text-decoration: none">How to order</a>
+        <a href="#about" style="color: #3b2b1e; text-decoration: none">About</a>
       </nav>
       <a href="#order" style="background: #3b2b1e; color: #f7f2e9; text-decoration: none; font-size: 14px; font-weight: 600; padding: 12px 20px; border-radius: 8px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Order a basket</a>
     </div>
@@ -230,42 +306,50 @@ html.intro-on .ce-logo{opacity:0}
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px">
         <article style="background: #f7f2e9; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column">
           <!-- PHOTO: Petite basket -->
-          <div class="ce-photo" style="aspect-ratio: 1 / 1; background: #efe6d6"><img class="ce-mark" src="favicon.svg" alt=""></div>
+          <div class="ce-photo" style="aspect-ratio: 1 / 1; background: #efe6d6"><img class="ce-mark" src="casa-eme-monogram.png" alt=""></div>
           <div style="padding: 20px; display: flex; flex-direction: column; gap: 8px; flex-grow: 1">
             <h3 style="margin: 0; font-family: Lora, Georgia, serif; font-weight: 700; font-size: 22px; line-height: 28px">Petite</h3>
             <p style="margin: 0; font-size: 14px; line-height: 20px; color: #6e5e4e; flex-grow: 1">A mug, cocoa, a candle and a sweet treat.</p>
             <p style="margin: 8px 0 0; font-size: 16px; font-weight: 600; color: #7e5f24">from $45</p>
+            <button type="button" class="ce-add" data-add="petite">Add to cart</button>
           </div>
         </article>
         <article style="background: #f7f2e9; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column">
           <!-- PHOTO: Classic basket -->
-          <div class="ce-photo" style="aspect-ratio: 1 / 1; background: #efe6d6"><img class="ce-mark" src="favicon.svg" alt=""></div>
+          <div class="ce-photo" style="aspect-ratio: 1 / 1; background: #efe6d6"><img class="ce-mark" src="casa-eme-monogram.png" alt=""></div>
           <div style="padding: 20px; display: flex; flex-direction: column; gap: 8px; flex-grow: 1">
             <h3 style="margin: 0; font-family: Lora, Georgia, serif; font-weight: 700; font-size: 22px; line-height: 28px">Classic</h3>
             <p style="margin: 0; font-size: 14px; line-height: 20px; color: #6e5e4e; flex-grow: 1">Snacks, coffee or tea, a candle and a small decor piece.</p>
             <p style="margin: 8px 0 0; font-size: 16px; font-weight: 600; color: #7e5f24">from $70</p>
+            <button type="button" class="ce-add" data-add="classic">Add to cart</button>
           </div>
         </article>
         <article style="background: #f7f2e9; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column">
           <!-- PHOTO: Housewarming basket -->
-          <div class="ce-photo" style="aspect-ratio: 1 / 1; background: #efe6d6"><img class="ce-mark" src="favicon.svg" alt=""></div>
+          <div class="ce-photo" style="aspect-ratio: 1 / 1; background: #efe6d6"><img class="ce-mark" src="casa-eme-monogram.png" alt=""></div>
           <div style="padding: 20px; display: flex; flex-direction: column; gap: 8px; flex-grow: 1">
             <h3 style="margin: 0; font-family: Lora, Georgia, serif; font-weight: 700; font-size: 22px; line-height: 28px">Housewarming</h3>
             <p style="margin: 0; font-size: 14px; line-height: 20px; color: #6e5e4e; flex-grow: 1">A cutting board or tea towel, local San Antonio treats and a candle.</p>
             <p style="margin: 8px 0 0; font-size: 16px; font-weight: 600; color: #7e5f24">from $95</p>
+            <button type="button" class="ce-add" data-add="housewarming">Add to cart</button>
           </div>
         </article>
         <article style="background: #f7f2e9; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column">
           <!-- PHOTO: Grand basket -->
-          <div class="ce-photo" style="aspect-ratio: 1 / 1; background: #efe6d6"><img class="ce-mark" src="favicon.svg" alt=""></div>
+          <div class="ce-photo" style="aspect-ratio: 1 / 1; background: #efe6d6"><img class="ce-mark" src="casa-eme-monogram.png" alt=""></div>
           <div style="padding: 20px; display: flex; flex-direction: column; gap: 8px; flex-grow: 1">
             <h3 style="margin: 0; font-family: Lora, Georgia, serif; font-weight: 700; font-size: 22px; line-height: 28px">Grand</h3>
             <p style="margin: 0; font-size: 14px; line-height: 20px; color: #6e5e4e; flex-grow: 1">The full spread for families and offices.</p>
             <p style="margin: 8px 0 0; font-size: 16px; font-weight: 600; color: #7e5f24">from $120</p>
+            <button type="button" class="ce-add" data-add="grand">Add to cart</button>
           </div>
         </article>
       </div>
       <p style="margin: 0; font-size: 14px; color: #6e5e4e">Ordering 5 or more for teachers, staff or clients? Ask about bundle pricing.</p>
+      <aside id="allergy" class="ce-allergy" aria-labelledby="allergyTitle">
+        <p id="allergyTitle" class="ce-allergy-title">FOOD ALLERGY NOTICE</p>
+        <p style="margin: 0; font-size: 14px; line-height: 22px">Our baskets may include foods that contain, or were made in facilities that handle, common allergens such as milk, eggs, wheat (gluten), soy, peanuts, tree nuts, sesame, fish and shellfish. Packaged items arrive sealed with their original ingredient labels. Please tell us about any allergies when you order, and we will gladly adjust your basket, but we cannot guarantee that any basket is completely allergen-free.</p>
+      </aside>
     </div>
   </section>
 
@@ -284,14 +368,14 @@ html.intro-on .ce-logo{opacity:0}
     <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
       <h2 style="margin: 0; font-family: Lora, Georgia, serif; font-weight: 700; font-size: 34px; line-height: 40px">How to order</h2>
       <ol style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 24px">
-        <li><strong>Pick a basket</strong> from the menu, or ask for a custom one.</li>
+        <li><strong>Add baskets to your cart</strong> from the menu, or describe a custom one in the form.</li>
         <li><strong>Send the form</strong> with your date and card message. We'll confirm within a day.</li>
-        <li><strong>Pay by Cash App, Venmo or Square,</strong> then pick up in San Antonio at no charge, or choose local delivery. Delivery rates vary by distance, and we’ll confirm yours before you pay.</li>
+        <li><strong>Pay by Cash App, Venmo or Square,</strong> then pick up in San Antonio at no charge, or choose local delivery. Delivery rates vary by distance.</li>
       </ol>
       <p style="margin: 0; font-size: 14px; line-height: 20px; color: #6e5e4e">Please order at least 3 days ahead. Holiday orders close December 15.</p>
     </div>
     <!-- Orders are emailed by FormSubmit (formsubmit.co). Orders go to casaemeliving@gmail.com. -->
-    <form method="POST" action="https://formsubmit.co/casaemeliving@gmail.com" style="flex: 1 1 380px; min-width: 0; background: rgba(239,230,214,.78); border-radius: 8px; padding: 32px; display: flex; flex-direction: column; gap: 16px; box-sizing: border-box">
+    <form id="orderForm" method="POST" action="https://formsubmit.co/casaemeliving@gmail.com" style="flex: 1 1 380px; min-width: 0; background: rgba(239,230,214,.78); border-radius: 8px; padding: 32px; display: flex; flex-direction: column; gap: 16px; box-sizing: border-box">
       <input type="hidden" name="_subject" value="New Casa Eme basket order">
       <input type="hidden" name="_next" value="https://casaemeliving.com/gracias.html">
       <input type="hidden" name="_template" value="table">
@@ -304,24 +388,64 @@ html.intro-on .ce-logo{opacity:0}
       <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Phone or email
         <input type="text" name="contact" required autocomplete="email" style="padding: 12px; border: 1px solid #b9a894; border-radius: 6px; background: #f7f2e9; font-weight: 400; min-height: 44px; box-sizing: border-box">
       </label>
-      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Basket
-        <select name="basket" style="padding: 12px; border: 1px solid #b9a894; border-radius: 6px; background: #f7f2e9; font-weight: 400; min-height: 44px">
-          <option value="Petite">Petite</option>
-          <option value="Classic">Classic</option>
-          <option value="Housewarming">Housewarming</option>
-          <option value="Grand">Grand</option>
-          <option value="Custom">Custom</option>
-        </select>
+      <div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">
+        <span>Your order</span>
+        <div id="orderSummary" class="ce-summary" aria-live="polite"></div>
+      </div>
+      <input type="hidden" name="order_items" id="orderItems" value="">
+      <input type="hidden" name="estimated_total" id="orderTotal" value="">
+      <fieldset class="ce-fieldset">
+        <legend>Pickup or delivery</legend>
+        <label class="ce-radio"><input type="radio" name="fulfillment" value="Pickup in San Antonio" checked> <span>Pickup in San Antonio (no charge)</span></label>
+        <label class="ce-radio"><input type="radio" name="fulfillment" value="Local delivery"> <span>Local delivery (rate based on distance)</span></label>
+      </fieldset>
+      <label id="addressField" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600" hidden>Delivery address
+        <textarea name="delivery_address" id="deliveryAddress" rows="2" autocomplete="street-address" style="padding: 12px; border: 1px solid #b9a894; border-radius: 6px; background: #f7f2e9; font-weight: 400; resize: vertical"></textarea>
       </label>
-      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Pickup or delivery date
-        <input type="date" name="date" style="padding: 12px; border: 1px solid #b9a894; border-radius: 6px; background: #f7f2e9; font-weight: 400; min-height: 44px; box-sizing: border-box">
-      </label>
+      <div class="ce-when">
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Preferred date
+          <span class="ce-datewrap">
+            <input type="date" name="date" id="orderDate" required style="padding: 12px; border: 1px solid #b9a894; border-radius: 6px; background: #f7f2e9; font-weight: 400; min-height: 44px; box-sizing: border-box">
+            <button type="button" class="ce-calbtn" id="calBtn" aria-label="Open calendar / Abrir calendario"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 9.5h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="8.5" cy="13.5" r="1.1" fill="currentColor"/><circle cx="12" cy="13.5" r="1.1" fill="currentColor"/><circle cx="15.5" cy="13.5" r="1.1" fill="currentColor"/><circle cx="8.5" cy="17" r="1.1" fill="currentColor"/></svg></button>
+          </span>
+          <span class="ce-hint">Choose at least 3 days ahead.</span>
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Preferred time
+          <select name="time" id="orderTime" required style="padding: 12px; border: 1px solid #b9a894; border-radius: 6px; background: #f7f2e9; font-weight: 400; min-height: 44px; box-sizing: border-box">
+            <option value="">Choose a time</option>
+            <option value="Morning (9 AM - 12 PM)">Morning (9 AM – 12 PM)</option>
+            <option value="Midday (12 - 3 PM)">Midday (12 – 3 PM)</option>
+            <option value="Afternoon (3 - 6 PM)">Afternoon (3 – 6 PM)</option>
+            <option value="Evening (6 - 8 PM)">Evening (6 – 8 PM)</option>
+          </select>
+        </label>
+      </div>
       <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Card message
         <textarea name="message" rows="3" style="padding: 12px; border: 1px solid #b9a894; border-radius: 6px; background: #f7f2e9; font-weight: 400; resize: vertical"></textarea>
       </label>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Allergies or dietary needs
+        <textarea name="allergies" rows="2" style="padding: 12px; border: 1px solid #b9a894; border-radius: 6px; background: #f7f2e9; font-weight: 400; resize: vertical"></textarea>
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Special requests or custom basket details
+        <textarea name="special_requests" id="specialRequests" rows="3" style="padding: 12px; border: 1px solid #b9a894; border-radius: 6px; background: #f7f2e9; font-weight: 400; resize: vertical"></textarea>
+      </label>
+      <label class="ce-check"><input type="checkbox" name="allergy_notice" value="Read" required> <span>I have read the food allergy notice.</span></label>
+      <p id="orderError" class="ce-error" role="alert" hidden></p>
       <button type="submit" style="background: #3b2b1e; color: #f7f2e9; border: 0; font-weight: 600; font-size: 15px; padding: 14px 24px; border-radius: 8px; min-height: 48px; cursor: pointer">Send order</button>
     </form>
   </section>
+  <section id="about" class="ce-about">
+    <div class="ce-about-inner">
+      <img src="casa-eme-monogram.png" alt="" class="ce-about-mark">
+      <p style="margin: 0; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.14em; color: #7e5f24">OUR STORY</p>
+      <h2 style="margin: 0; font-family: Lora, Georgia, serif; font-weight: 700; font-size: 34px; line-height: 40px">From Mexico to San Antonio, con cariño</h2>
+      <div aria-hidden="true" style="display: flex; align-items: center; gap: 8px; width: 160px"><span style="flex: 1; height: 2px; background: #a8823a"></span><span style="width: 7px; height: 7px; border-radius: 50%; background: #a8823a"></span><span style="flex: 1; height: 2px; background: #a8823a"></span></div>
+      <p style="margin: 0; font-size: 17px; line-height: 28px">Casa Eme is a Latina-owned business born from a simple passion: bringing happiness and joy to the people around us.</p>
+      <p style="margin: 0; font-size: 17px; line-height: 28px">Our roots stretch from Mexico all the way to San Antonio, and every basket carries that warmth. Each one is thoughtfully chosen, wrapped by hand and made to celebrate the people and moments that matter most.</p>
+      <p style="margin: 0; font-family: Lora, Georgia, serif; font-style: italic; font-size: 22px; color: #7e5f24">Mi casa es su casa.</p>
+    </div>
+  </section>
+
   </main>
 
   <footer style="background: rgba(239,230,214,.78); color: #3b2b1e; padding: 48px 24px; border-top: 1px solid #e0d3bc">
@@ -342,7 +466,164 @@ html.intro-on .ce-logo{opacity:0}
 </div>
 <script>
 (function () {
-  var ES = {"MEET THE FOUNDER": "CONOCE A LA FUNDADORA", "Monica, the heart behind Casa Eme": "Monica, el corazón de Casa Eme", "Before Casa Eme, Monica spent 20 years in dentistry after earning her degree from the Universidad Autónoma de San Luis Potosí (UASLP) in 2003. Along the way she built lasting relationships and earned the trust of every patient she served, and many of them came to see her as family.": "Antes de Casa Eme, Monica dedicó 20 años a la odontología, después de graduarse de la Universidad Autónoma de San Luis Potosí (UASLP) en 2003. En ese camino formó relaciones duraderas y se ganó la confianza de cada paciente que atendió; muchos llegaron a verla como parte de su familia.", "In 2021 she earned her Texas real estate license. She is a member of the San Antonio Board of REALTORS® and the Texas and National Associations of REALTORS®, and holds the GRI (Graduate Realtor Institute) and MVHC (Military and Veteran Housing Certification) designations. She guides buyers and sellers alike, in English and Spanish, with professionalism and peace of mind every step of the way.": "En 2021 obtuvo su licencia de bienes raíces en Texas. Es miembro de la Junta de REALTORS® de San Antonio y de las Asociaciones de REALTORS® de Texas y Nacional, y cuenta con las certificaciones GRI (Graduate Realtor Institute) y MVHC (Military and Veteran Housing Certification). Acompaña tanto a compradores como a vendedores, en inglés y en español, con profesionalismo y tranquilidad en cada paso.", "Casa Eme carries that same care into every basket: listening first, then wrapping each one by hand for the people and moments that matter, from the holidays to the day you get the keys.": "Casa Eme lleva ese mismo cuidado a cada canasta: primero escuchar, y luego envolver cada una a mano para las personas y los momentos que importan, desde las fiestas hasta el día en que recibes las llaves.", "Outside of work, Monica cherishes time with her family, cooking their favorite Mexican recipes and volunteering with organizations including the Ronald McDonald House. She and her family are members of River City Community Church, where they find community and strength in their faith.": "Fuera del trabajo, Monica disfruta el tiempo con su familia, cocinando sus recetas mexicanas favoritas y colaborando como voluntaria en organizaciones como la Casa Ronald McDonald. Ella y su familia son miembros de River City Community Church, donde encuentran comunidad y fortaleza en su fe.", "Languages: English · Spanish": "Idiomas: inglés · español", "Serving your real estate needs with purpose.": "Al servicio de sus necesidades de bienes raíces, con propósito.", "Real estate services provided through Reliance Residential Realty.": "Servicios de bienes raíces a través de Reliance Residential Realty.", "About": "Conócenos", "Play intro": "Ver intro", "SKIP": "SALTAR", "Menu": "Menú", "Custom baskets": "Canastas personalizadas", "How to order": "Cómo ordenar", "Order a basket": "Hacer pedido", "HAND-WRAPPED IN SAN ANTONIO": "ENVUELTAS A MANO EN SAN ANTONIO", "Make someone's day.": "Alegra el día de alguien.", "Gift baskets for the holidays, teachers, thank-yous and home closings. Every bow tied by hand, ready for pickup or local delivery.": "Canastas de regalo para las fiestas, maestros, agradecimientos y cierres de casa. Cada moño atado a mano, listas para recoger o con entrega local.", "See the menu": "Ver el menú", "Build a custom basket": "Arma una canasta personalizada", "Holiday orders close December 15.": "Los pedidos navideños cierran el 15 de diciembre.", "Holidays": "Fiestas", "Teachers": "Maestros", "Thank-you": "Agradecimiento", "Housewarming": "Casa nueva", "Birthdays": "Cumpleaños", "Office & clients": "Oficina y clientes", "The menu": "El menú", "Four baskets, made to order. Please give us 3 days' notice.": "Cuatro canastas, hechas sobre pedido. Por favor, ordena con 3 días de anticipación.", "Petite": "Petite", "A mug, cocoa, a candle and a sweet treat.": "Una taza, chocolate caliente, una vela y un dulce.", "from $45": "desde $45", "Classic": "Clásica", "Snacks, coffee or tea, a candle and a small decor piece.": "Botanas, café o té, una vela y un detalle decorativo.", "from $70": "desde $70", "A cutting board or tea towel, local San Antonio treats and a candle.": "Una tabla para picar o un trapo de cocina, golosinas locales de San Antonio y una vela.", "from $95": "desde $95", "Grand": "Grande", "The full spread for families and offices.": "El surtido completo para familias y oficinas.", "from $120": "desde $120", "Ordering 5 or more for teachers, staff or clients? Ask about bundle pricing.": "¿Vas a pedir 5 o más para maestros, personal o clientes? Pregunta por nuestros precios de paquete.", "Need something just for them?": "¿Buscas algo especial para esa persona?", "Birthdays, new babies, get-well, a thank-you for a neighbor. Tell us who it's for and your budget, and we'll build it around them.": "Cumpleaños, bebés recién nacidos, pronta recuperación, un agradecimiento para un vecino. Dinos para quién es y tu presupuesto, y la armamos pensando en esa persona.", "Ask for a custom basket": "Pide una canasta personalizada", "Pick a basket": "Elige una canasta", "from the menu, or ask for a custom one.": "del menú o pide una personalizada.", "Send the form": "Envía el formulario", "with your date and card message. We'll confirm within a day.": "con tu fecha y el mensaje para la tarjeta. Te confirmamos en un día.", "Pay by Cash App, Venmo or Square,": "Paga por Cash App, Venmo o Square,", "then pick up in San Antonio at no charge, or choose local delivery. Delivery rates vary by distance, and we’ll confirm yours before you pay.": "y recoge en San Antonio sin costo, o elige entrega local. La tarifa de entrega varía según la distancia y te la confirmaremos antes de que pagues.", "Please order at least 3 days ahead. Holiday orders close December 15.": "Por favor ordena con al menos 3 días de anticipación. Los pedidos navideños cierran el 15 de diciembre.", "Place an order": "Haz tu pedido", "Your name": "Tu nombre", "Phone or email": "Teléfono o correo", "Basket": "Canasta", "Custom": "Personalizada", "Pickup or delivery date": "Fecha para recoger o entregar", "Card message": "Mensaje para la tarjeta", "Send order": "Enviar pedido", "Hand-wrapped gift baskets · San Antonio, TX": "Canastas de regalo envueltas a mano · San Antonio, TX"};
+  var PRODUCTS = {
+    petite:       { en: 'Petite',       es: 'Petite',     price: 45 },
+    classic:      { en: 'Classic',      es: 'Clásica',    price: 70 },
+    housewarming: { en: 'Housewarming', es: 'Casa nueva', price: 95 },
+    grand:        { en: 'Grand',        es: 'Grande',     price: 120 }
+  };
+  var T = {
+    en: { empty: 'Your cart is empty.', browse: 'Browse the menu', each: 'each', remove: 'Remove', total: 'Estimated total',
+          note: 'Prices shown are starting prices. Delivery, if chosen, is added separately.', go: 'Continue to order form',
+          none: 'No baskets added yet.', add: 'Add baskets from the menu', orCustom: 'or describe a custom basket below.',
+          less: 'One less', more: 'One more',
+          needItems: 'Please add a basket to your cart, or describe a custom basket in Special requests.',
+          needAddress: 'Please add the delivery address.', needDate: 'Please choose a date at least 3 days from today.' },
+    es: { empty: 'Tu carrito está vacío.', browse: 'Ver el menú', each: 'c/u', remove: 'Quitar', total: 'Total estimado',
+          note: 'Los precios mostrados son precios iniciales. La entrega, si la eliges, se agrega por separado.', go: 'Continuar al formulario',
+          none: 'Aún no has agregado canastas.', add: 'Agrega canastas desde el menú', orCustom: 'o describe una canasta personalizada abajo.',
+          less: 'Uno menos', more: 'Uno más',
+          needItems: 'Agrega una canasta a tu carrito o describe una canasta personalizada en Peticiones especiales.',
+          needAddress: 'Por favor agrega la dirección de entrega.', needDate: 'Elige una fecha con al menos 3 días de anticipación.' }
+  };
+  var lang = 'en';
+  var cart = {};
+  try { cart = JSON.parse(localStorage.getItem('casaEmeCart') || '{}') || {}; } catch (e) { cart = {}; }
+  Object.keys(cart).forEach(function (k) { if (!PRODUCTS[k] || !(cart[k] > 0)) delete cart[k]; });
+
+  function $(id) { return document.getElementById(id); }
+  function t(k) { return T[lang][k]; }
+  function money(n) { return '$' + n.toLocaleString('en-US'); }
+  function count() { var c = 0; for (var k in cart) c += cart[k]; return c; }
+  function total() { var s = 0; for (var k in cart) s += cart[k] * PRODUCTS[k].price; return s; }
+  function save() { try { localStorage.setItem('casaEmeCart', JSON.stringify(cart)); } catch (e) {} }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  function render() {
+    var n = count(), sum = total();
+    $('cartCount').textContent = n;
+    $('cartBtnTotal').textContent = n ? money(sum) : '';
+    // drawer
+    var body = $('cartItems'), foot = $('cartFoot');
+    body.innerHTML = ''; foot.innerHTML = '';
+    if (!n) {
+      var empty = el('div', 'ce-empty'); empty.appendChild(el('p', null, t('empty')));
+      var b = el('button', 'ce-go', t('browse')); b.type = 'button';
+      b.addEventListener('click', function () { closeCart(); location.hash = '#menu'; });
+      empty.appendChild(b); body.appendChild(empty);
+    } else {
+      Object.keys(PRODUCTS).forEach(function (k) {
+        if (!cart[k]) return;
+        var p = PRODUCTS[k], row = el('div', 'ce-line');
+        var left = el('div'); left.appendChild(el('div', 'ce-line-name', p[lang]));
+        left.appendChild(el('div', 'ce-line-price', money(p.price) + ' ' + t('each')));
+        row.appendChild(left);
+        row.appendChild(el('div', 'ce-line-total', money(p.price * cart[k])));
+        var q = el('div', 'ce-qty');
+        var minus = el('button', null, '−'); minus.type = 'button'; minus.setAttribute('aria-label', t('less') + ' ' + p[lang]);
+        var plus = el('button', null, '+'); plus.type = 'button'; plus.setAttribute('aria-label', t('more') + ' ' + p[lang]);
+        minus.addEventListener('click', function () { setQty(k, cart[k] - 1); });
+        plus.addEventListener('click', function () { setQty(k, cart[k] + 1); });
+        q.appendChild(minus); q.appendChild(el('span', null, cart[k])); q.appendChild(plus);
+        row.appendChild(q);
+        var rm = el('button', 'ce-remove', t('remove')); rm.type = 'button';
+        rm.addEventListener('click', function () { setQty(k, 0); });
+        row.appendChild(rm);
+        body.appendChild(row);
+      });
+      var sumRow = el('div', 'ce-sum'); sumRow.appendChild(el('span', null, t('total'))); sumRow.appendChild(el('span', null, money(sum)));
+      foot.appendChild(sumRow);
+      foot.appendChild(el('p', 'ce-note', t('note')));
+      var go = el('button', 'ce-go', t('go')); go.type = 'button';
+      go.addEventListener('click', function () { closeCart(); location.hash = '#order'; });
+      foot.appendChild(go);
+    }
+    // order form summary + hidden fields (sent in English to the inbox)
+    var box = $('orderSummary');
+    if (box) {
+      box.innerHTML = '';
+      if (!n) {
+        var p1 = el('p'); p1.style.margin = '0';
+        var a = el('a', null, t('add')); a.href = '#menu';
+        p1.appendChild(a); p1.appendChild(document.createTextNode(' ' + t('orCustom')));
+        box.appendChild(el('p', null, t('none'))).style.margin = '0 0 4px'; box.appendChild(p1);
+      } else {
+        var tbl = el('table'), lines = [];
+        Object.keys(PRODUCTS).forEach(function (k) {
+          if (!cart[k]) return;
+          var p = PRODUCTS[k], tr = el('tr');
+          tr.appendChild(el('td', null, cart[k] + ' × ' + p[lang]));
+          tr.appendChild(el('td', null, money(p.price * cart[k])));
+          tbl.appendChild(tr);
+          lines.push(cart[k] + ' x ' + p.en + ' @ ' + money(p.price) + ' = ' + money(p.price * cart[k]));
+        });
+        var tr2 = el('tr', 'tot'); tr2.appendChild(el('td', null, t('total'))); tr2.appendChild(el('td', null, money(sum)));
+        tbl.appendChild(tr2); box.appendChild(tbl);
+        $('orderItems').value = lines.join('; ');
+      }
+      if (!n) $('orderItems').value = '';
+      $('orderTotal').value = n ? money(sum) + ' (starting prices; delivery separate)' : '';
+    }
+  }
+  function setQty(k, q) { if (q > 0) cart[k] = Math.min(q, 50); else delete cart[k]; save(); render(); }
+
+  // drawer open/close
+  var lastFocus = null;
+  function openCart() {
+    lastFocus = document.activeElement;
+    $('cartBackdrop').hidden = false;
+    $('cartDrawer').classList.add('open'); $('cartDrawer').setAttribute('aria-hidden', 'false');
+    $('cartClose').focus();
+  }
+  function closeCart() {
+    $('cartBackdrop').hidden = true;
+    $('cartDrawer').classList.remove('open'); $('cartDrawer').setAttribute('aria-hidden', 'true');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    $('cartBtn').addEventListener('click', openCart);
+    $('cartClose').addEventListener('click', closeCart);
+    $('cartBackdrop').addEventListener('click', closeCart);
+    $('cartDrawer').addEventListener('keydown', function (e) { if (e.key === 'Escape') closeCart(); });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-add]'), function (b) {
+      b.addEventListener('click', function () {
+        var k = b.getAttribute('data-add'); setQty(k, (cart[k] || 0) + 1);
+        b.classList.add('is-added'); setTimeout(function () { b.classList.remove('is-added'); }, 900);
+        var cb = $('cartBtn'); cb.classList.remove('bump'); void cb.offsetWidth; cb.classList.add('bump');
+      });
+    });
+
+    // date: calendar button + 3-day minimum
+    var d = $('orderDate'), min = new Date(); min.setDate(min.getDate() + 3);
+    var iso = min.getFullYear() + '-' + String(min.getMonth() + 1).padStart(2, '0') + '-' + String(min.getDate()).padStart(2, '0');
+    d.min = iso;
+    $('calBtn').addEventListener('click', function () { try { d.showPicker(); } catch (e) { d.focus(); } });
+
+    // delivery address only when delivery is chosen
+    function syncDelivery() {
+      var del = document.querySelector('input[name="fulfillment"]:checked').value === 'Local delivery';
+      $('addressField').hidden = !del; $('deliveryAddress').required = del;
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('input[name="fulfillment"]'), function (r) { r.addEventListener('change', syncDelivery); });
+    syncDelivery();
+
+    // check before sending
+    $('orderForm').addEventListener('submit', function (e) {
+      var err = $('orderError'), msg = '';
+      if (!count() && !$('specialRequests').value.trim()) msg = t('needItems');
+      else if (d.value && d.value < iso) msg = t('needDate');
+      if (msg) { e.preventDefault(); err.textContent = msg; err.hidden = false; err.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+      else err.hidden = true;
+    });
+    render();
+  });
+  document.addEventListener('ce-lang', function (e) { lang = e.detail === 'es' ? 'es' : 'en'; if (document.getElementById('cartItems')) render(); });
+})();
+</script>
+<script>
+(function () {
+  var ES = {"MEET THE FOUNDER": "CONOCE A LA FUNDADORA", "Monica, the heart behind Casa Eme": "Monica, el corazón de Casa Eme", "Before Casa Eme, Monica spent 20 years in dentistry after earning her degree from the Universidad Autónoma de San Luis Potosí (UASLP) in 2003. Along the way she built lasting relationships and earned the trust of every patient she served, and many of them came to see her as family.": "Antes de Casa Eme, Monica dedicó 20 años a la odontología, después de graduarse de la Universidad Autónoma de San Luis Potosí (UASLP) en 2003. En ese camino formó relaciones duraderas y se ganó la confianza de cada paciente que atendió; muchos llegaron a verla como parte de su familia.", "In 2021 she earned her Texas real estate license. She is a member of the San Antonio Board of REALTORS® and the Texas and National Associations of REALTORS®, and holds the GRI (Graduate Realtor Institute) and MVHC (Military and Veteran Housing Certification) designations. She guides buyers and sellers alike, in English and Spanish, with professionalism and peace of mind every step of the way.": "En 2021 obtuvo su licencia de bienes raíces en Texas. Es miembro de la Junta de REALTORS® de San Antonio y de las Asociaciones de REALTORS® de Texas y Nacional, y cuenta con las certificaciones GRI (Graduate Realtor Institute) y MVHC (Military and Veteran Housing Certification). Acompaña tanto a compradores como a vendedores, en inglés y en español, con profesionalismo y tranquilidad en cada paso.", "Casa Eme carries that same care into every basket: listening first, then wrapping each one by hand for the people and moments that matter, from the holidays to the day you get the keys.": "Casa Eme lleva ese mismo cuidado a cada canasta: primero escuchar, y luego envolver cada una a mano para las personas y los momentos que importan, desde las fiestas hasta el día en que recibes las llaves.", "Outside of work, Monica cherishes time with her family, cooking their favorite Mexican recipes and volunteering with organizations including the Ronald McDonald House. She and her family are members of River City Community Church, where they find community and strength in their faith.": "Fuera del trabajo, Monica disfruta el tiempo con su familia, cocinando sus recetas mexicanas favoritas y colaborando como voluntaria en organizaciones como la Casa Ronald McDonald. Ella y su familia son miembros de River City Community Church, donde encuentran comunidad y fortaleza en su fe.", "Languages: English · Spanish": "Idiomas: inglés · español", "Serving your real estate needs with purpose.": "Al servicio de sus necesidades de bienes raíces, con propósito.", "Real estate services provided through Reliance Residential Realty.": "Servicios de bienes raíces a través de Reliance Residential Realty.", "About": "Conócenos", "Play intro": "Ver intro", "SKIP": "SALTAR", "Menu": "Menú", "Custom baskets": "Canastas personalizadas", "How to order": "Cómo ordenar", "Order a basket": "Hacer pedido", "HAND-WRAPPED IN SAN ANTONIO": "ENVUELTAS A MANO EN SAN ANTONIO", "Make someone's day.": "Alegra el día de alguien.", "Gift baskets for the holidays, teachers, thank-yous and home closings. Every bow tied by hand, ready for pickup or local delivery.": "Canastas de regalo para las fiestas, maestros, agradecimientos y cierres de casa. Cada moño atado a mano, listas para recoger o con entrega local.", "See the menu": "Ver el menú", "Build a custom basket": "Arma una canasta personalizada", "Holiday orders close December 15.": "Los pedidos navideños cierran el 15 de diciembre.", "Holidays": "Fiestas", "Teachers": "Maestros", "Thank-you": "Agradecimiento", "Housewarming": "Casa nueva", "Birthdays": "Cumpleaños", "Office & clients": "Oficina y clientes", "The menu": "El menú", "Four baskets, made to order. Please give us 3 days' notice.": "Cuatro canastas, hechas sobre pedido. Por favor, ordena con 3 días de anticipación.", "Petite": "Petite", "A mug, cocoa, a candle and a sweet treat.": "Una taza, chocolate caliente, una vela y un dulce.", "from $45": "desde $45", "Classic": "Clásica", "Snacks, coffee or tea, a candle and a small decor piece.": "Botanas, café o té, una vela y un detalle decorativo.", "from $70": "desde $70", "A cutting board or tea towel, local San Antonio treats and a candle.": "Una tabla para picar o un trapo de cocina, golosinas locales de San Antonio y una vela.", "from $95": "desde $95", "Grand": "Grande", "The full spread for families and offices.": "El surtido completo para familias y oficinas.", "from $120": "desde $120", "Ordering 5 or more for teachers, staff or clients? Ask about bundle pricing.": "¿Vas a pedir 5 o más para maestros, personal o clientes? Pregunta por nuestros precios de paquete.", "Need something just for them?": "¿Buscas algo especial para esa persona?", "Birthdays, new babies, get-well, a thank-you for a neighbor. Tell us who it's for and your budget, and we'll build it around them.": "Cumpleaños, bebés recién nacidos, pronta recuperación, un agradecimiento para un vecino. Dinos para quién es y tu presupuesto, y la armamos pensando en esa persona.", "Ask for a custom basket": "Pide una canasta personalizada", "Pick a basket": "Elige una canasta", "from the menu, or ask for a custom one.": "del menú o pide una personalizada.", "Send the form": "Envía el formulario", "with your date and card message. We'll confirm within a day.": "con tu fecha y el mensaje para la tarjeta. Te confirmamos en un día.", "Pay by Cash App, Venmo or Square,": "Paga por Cash App, Venmo o Square,", "Please order at least 3 days ahead. Holiday orders close December 15.": "Por favor ordena con al menos 3 días de anticipación. Los pedidos navideños cierran el 15 de diciembre.", "Place an order": "Haz tu pedido", "Your name": "Tu nombre", "Phone or email": "Teléfono o correo", "Basket": "Canasta", "Custom": "Personalizada", "Pickup or delivery date": "Fecha para recoger o entregar", "Card message": "Mensaje para la tarjeta", "Send order": "Enviar pedido", "Hand-wrapped gift baskets · San Antonio, TX": "Canastas de regalo envueltas a mano · San Antonio, TX", "then pick up in San Antonio at no charge, or choose local delivery. Delivery rates vary by distance.": "y recoge en San Antonio sin costo, o elige entrega local. La tarifa de entrega varía según la distancia.", "Add to cart": "Agregar al carrito", "Cart": "Carrito", "Your cart": "Tu carrito", "FOOD ALLERGY NOTICE": "AVISO SOBRE ALERGIAS ALIMENTARIAS", "Our baskets may include foods that contain, or were made in facilities that handle, common allergens such as milk, eggs, wheat (gluten), soy, peanuts, tree nuts, sesame, fish and shellfish. Packaged items arrive sealed with their original ingredient labels. Please tell us about any allergies when you order, and we will gladly adjust your basket, but we cannot guarantee that any basket is completely allergen-free.": "Nuestras canastas pueden incluir alimentos que contienen, o que se elaboraron en instalaciones donde se manejan, alérgenos comunes como leche, huevo, trigo (gluten), soya, cacahuate, nueces, ajonjolí, pescado y mariscos. Los productos empacados llegan sellados con su etiqueta original de ingredientes. Por favor, avísanos de cualquier alergia al hacer tu pedido y con gusto ajustaremos tu canasta, pero no podemos garantizar que ninguna canasta esté completamente libre de alérgenos.", "Add baskets to your cart": "Agrega canastas a tu carrito", "from the menu, or describe a custom one in the form.": "desde el menú, o describe una personalizada en el formulario.", "Your order": "Tu pedido", "Pickup or delivery": "Recoger o entrega", "Pickup in San Antonio (no charge)": "Recoger en San Antonio (sin costo)", "Local delivery (rate based on distance)": "Entrega local (tarifa según la distancia)", "Delivery address": "Dirección de entrega", "Preferred date": "Fecha preferida", "Preferred time": "Hora preferida", "Choose at least 3 days ahead.": "Elige una fecha con al menos 3 días de anticipación.", "Choose a time": "Elige un horario", "Morning (9 AM – 12 PM)": "Mañana (9 a. m. – 12 p. m.)", "Midday (12 – 3 PM)": "Mediodía (12 – 3 p. m.)", "Afternoon (3 – 6 PM)": "Tarde (3 – 6 p. m.)", "Evening (6 – 8 PM)": "Noche (6 – 8 p. m.)", "Allergies or dietary needs": "Alergias o necesidades alimentarias", "Special requests or custom basket details": "Peticiones especiales o detalles de una canasta personalizada", "I have read the food allergy notice.": "He leído el aviso sobre alergias alimentarias.", "OUR STORY": "NUESTRA HISTORIA", "From Mexico to San Antonio, con cariño": "De México a San Antonio, con cariño", "Casa Eme is a Latina-owned business born from a simple passion: bringing happiness and joy to the people around us.": "Casa Eme es un negocio de propiedad latina que nace de una pasión sencilla: llevar felicidad y alegría a quienes nos rodean.", "Our roots stretch from Mexico all the way to San Antonio, and every basket carries that warmth. Each one is thoughtfully chosen, wrapped by hand and made to celebrate the people and moments that matter most.": "Nuestras raíces van desde México hasta San Antonio, y cada canasta lleva esa calidez. Cada una se elige con cuidado, se envuelve a mano y se hace para celebrar a las personas y los momentos que más importan."};
   var TITLE = {en: document.title, es: 'Casa Eme · Canastas de Regalo Envueltas a Mano en San Antonio'};
   var nodes = [];
   (function walk(el) {
@@ -362,6 +643,7 @@ html.intro-on .ce-logo{opacity:0}
       b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
     });
     try { localStorage.setItem('casaEmeLang', lang); } catch (e) {}
+    document.dispatchEvent(new CustomEvent('ce-lang', { detail: lang }));
   }
   Array.prototype.forEach.call(document.querySelectorAll('.ce-langbtn'), function (b) {
     b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); });
